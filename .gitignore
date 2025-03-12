@@ -1,0 +1,16 @@
+# Project exclude paths
+/aiplatform-api/aiplatform-api-system/target/
+/aiplatform-auth/target/
+/aiplatform-common/aiplatform-common-core/target/
+/aiplatform-common/aiplatform-common-datascope/target/
+/aiplatform-common/aiplatform-common-datasource/target/
+/aiplatform-common/aiplatform-common-log/target/
+/aiplatform-common/aiplatform-common-redis/target/
+/aiplatform-common/aiplatform-common-seata/target/
+/aiplatform-common/aiplatform-common-security/target/
+/aiplatform-common/aiplatform-common-swagger/target/
+/aiplatform-gateway/target/
+/aiplatform-modules/aiplatform-file/target/
+/aiplatform-modules/aiplatform-gen/target/
+/aiplatform-modules/aiplatform-job/target/
+/aiplatform-modules/aiplatform-system/target/

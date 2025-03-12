@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/aiplatform-api/aiplatform-api-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-api/aiplatform-api-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-datascope/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-datascope/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-seata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-seata/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-swagger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-swagger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/aiplatform-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-visual/aiplatform-monitor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-visual/aiplatform-monitor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-visual/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aiplatform-visual/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

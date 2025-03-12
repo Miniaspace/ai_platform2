@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.aiplatform</groupId>
+        <artifactId>ai_platform</artifactId>
+        <version>3.6.5</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>aiplatform-common-log</module>
+        <module>aiplatform-common-core</module>
+        <module>aiplatform-common-redis</module>
+        <module>aiplatform-common-seata</module>
+        <module>aiplatform-common-swagger</module>
+        <module>aiplatform-common-security</module>
+        <module>aiplatform-common-datascope</module>
+        <module>aiplatform-common-datasource</module>
+    </modules>
+
+    <artifactId>aiplatform-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        aiplatform-common通用模块
+    </description>
+
+</project>

@@ -1,0 +1,5 @@
+com.aiplatform.common.security.config.WebMvcConfig
+com.aiplatform.common.security.service.TokenService
+com.aiplatform.common.security.aspect.PreAuthorizeAspect
+com.aiplatform.common.security.aspect.InnerAuthAspect
+com.aiplatform.common.security.handler.GlobalExceptionHandler
