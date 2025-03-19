@@ -12,7 +12,7 @@ import com.aiplatform.common.core.utils.poi.ExcelHandlerAdapter;
 /**
  * 自定义导出Excel数据注解
  * 
- * @author ruoyi
+ * @author aiplatform
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
@@ -171,7 +171,7 @@ public @interface Excel
 
     public enum ColumnType
     {
-        NUMERIC(0), STRING(1), IMAGE(2), TEXT(3);
+        NUMERIC(0), STRING(1), IMAGE(2),TXT(3);
         private final int value;
 
         ColumnType(int value)

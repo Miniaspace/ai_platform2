@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aiplatform.dataset.mapper.DatasetVersionCompareMapper">
+    
+    <resultMap type="DatasetVersionCompare" id="DatasetVersionCompareResult">
+        <result property="compareId"     column="compare_id"      />
+        <result property="sourceVersionId" column="source_version_id" />
+        <result property="targetVersionId" column="target_version_id" />
+        <result property="compareResult" column="compare_result"  />
+        <result property="createBy"      column="create_by"       />
+        <result property="createTime"    column="create_time"     />
+        <result property="updateBy"      column="update_by"       />
+        <result property="updateTime"    column="update_time"     />
+        <result property="remark"        column="remark"          />
+        <association property="sourceVersion" javaType="DatasetVersion">
+            <result property="versionId" column="source_version_id" />
+            <result property="versionName" column="source_version_name" />
+        </association>
+        <association property="targetVersion" javaType="DatasetVersion">
+            <result property="versionId" column="target_version_id" />
+            <result property="versionName" column="target_version_name" />
+        </association>
+    </resultMap>
+
+    <sql id="selectDatasetVersionCompareVo">
+        select dvc.compare_id, dvc.source_version_id, dvc.target_version_id, dvc.compare_result,
+        dvc.create_by, dvc.create_time, dvc.update_by, dvc.update_time, dvc.remark,
+        dv1.version_name as source_version_name,
+        dv2.version_name as target_version_name
+        from dataset_version_compare dvc
+        left join dataset_version dv1 on dvc.source_version_id = dv1.version_id
+        left join dataset_version dv2 on dvc.target_version_id = dv2.version_id
+    </sql>
+
+    <select id="selectDatasetVersionCompareById" parameterType="Long" resultMap="DatasetVersionCompareResult">
+        <include refid="selectDatasetVersionCompareVo"/>
+        where dvc.compare_id = #{compareId}
+    </select>
+
+    <select id="selectDatasetVersionCompareList" parameterType="DatasetVersionCompare" resultMap="DatasetVersionCompareResult">
+        <include refid="selectDatasetVersionCompareVo"/>
+        <where>
+            <if test="sourceVersionId != null "> and dvc.source_version_id = #{sourceVersionId}</if>
+            <if test="targetVersionId != null "> and dvc.target_version_id = #{targetVersionId}</if>
+        </where>
+    </select>
+
+    <select id="selectComparesBySourceVersionId" parameterType="Long" resultMap="DatasetVersionCompareResult">
+        <include refid="selectDatasetVersionCompareVo"/>
+        where dvc.source_version_id = #{sourceVersionId}
+        order by dvc.create_time desc
+    </select>
+
+    <select id="selectComparesByTargetVersionId" parameterType="Long" resultMap="DatasetVersionCompareResult">
+        <include refid="selectDatasetVersionCompareVo"/>
+        where dvc.target_version_id = #{targetVersionId}
+        order by dvc.create_time desc
+    </select>
+    
+    <insert id="insertDatasetVersionCompare" parameterType="DatasetVersionCompare" useGeneratedKeys="true" keyProperty="compareId">
+        insert into dataset_version_compare
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sourceVersionId != null">source_version_id,</if>
+            <if test="targetVersionId != null">target_version_id,</if>
+            <if test="compareResult != null">compare_result,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="sourceVersionId != null">#{sourceVersionId},</if>
+            <if test="targetVersionId != null">#{targetVersionId},</if>
+            <if test="compareResult != null">#{compareResult},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDatasetVersionCompare" parameterType="DatasetVersionCompare">
+        update dataset_version_compare
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="sourceVersionId != null">source_version_id = #{sourceVersionId},</if>
+            <if test="targetVersionId != null">target_version_id = #{targetVersionId},</if>
+            <if test="compareResult != null">compare_result = #{compareResult},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where compare_id = #{compareId}
+    </update>
+
+    <delete id="deleteDatasetVersionCompareById" parameterType="Long">
+        delete from dataset_version_compare where compare_id = #{compareId}
+    </delete>
+
+    <delete id="deleteDatasetVersionCompareByIds" parameterType="Long">
+        delete from dataset_version_compare where compare_id in
+        <foreach item="compareId" collection="array" open="(" separator="," close=")">
+            #{compareId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByVersionId" parameterType="Long">
+        delete from dataset_version_compare 
+        where source_version_id = #{versionId} or target_version_id = #{versionId}
+    </delete>
+</mapper> 

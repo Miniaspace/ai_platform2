@@ -1,0 +1,91 @@
+10:37:03.990 [reactor-http-nio-10] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+10:37:41.373 [reactor-http-nio-11] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset,异常信息:404 NOT_FOUND
+10:37:42.907 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset,异常信息:404 NOT_FOUND
+10:47:24.940 [reactor-http-nio-13] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset,异常信息:404 NOT_FOUND
+10:47:27.550 [reactor-http-nio-17] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+10:47:43.348 [reactor-http-nio-18] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset,异常信息:404 NOT_FOUND
+10:49:09.814 [reactor-http-nio-19] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/dataset/list,异常信息:404 NOT_FOUND
+10:50:22.057 [reactor-http-nio-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+10:51:38.650 [reactor-http-nio-21] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+10:53:27.710 [reactor-http-nio-22] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:01:20.554 [reactor-http-nio-23] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:01:23.035 [reactor-http-nio-3] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:01:33.036 [reactor-http-nio-4] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:03:33.522 [reactor-http-nio-5] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:15:38.099 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:15:43.186 [reactor-http-nio-7] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:15:48.808 [reactor-http-nio-8] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:17:09.167 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+11:18:00.906 [reactor-http-nio-17] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/api/v1/datasets,异常信息:404 NOT_FOUND
+13:15:17.770 [reactor-http-nio-23] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:15:23.700 [reactor-http-nio-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:15:56.278 [reactor-http-nio-1] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:16:12.456 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:16:45.549 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:18:00.730 [reactor-http-nio-10] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:19:17.655 [reactor-http-nio-11] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:20:25.520 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:20:47.092 [reactor-http-nio-18] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:20:53.274 [reactor-http-nio-19] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+13:21:38.302 [reactor-http-nio-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/add,异常信息:404 NOT_FOUND
+13:24:44.212 [reactor-http-nio-13] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/compare,异常信息:404 NOT_FOUND
+13:24:44.212 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/get,异常信息:404 NOT_FOUND
+13:24:44.220 [reactor-http-nio-14] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/get,异常信息:404 NOT_FOUND
+13:24:47.070 [reactor-http-nio-15] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/tag/list,异常信息:404 NOT_FOUND
+13:29:57.232 [reactor-http-nio-8] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/tag/list,异常信息:404 NOT_FOUND
+13:30:26.282 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/tag/list,异常信息:404 NOT_FOUND
+13:32:11.938 [reactor-http-nio-16] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/tag/list,异常信息:404 NOT_FOUND
+14:33:19.026 [reactor-http-nio-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+14:33:37.319 [reactor-http-nio-3] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+14:36:21.981 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+15:17:23.128 [reactor-http-nio-7] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/compare,异常信息:404 NOT_FOUND
+15:36:10.055 [reactor-http-nio-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+15:57:53.214 [reactor-http-nio-2] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/tag,异常信息:404 NOT_FOUND
+16:00:12.244 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:01:08.508 [reactor-http-nio-10] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:01:44.737 [reactor-http-nio-13] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:02:20.414 [reactor-http-nio-15] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:02:48.999 [reactor-http-nio-16] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version,异常信息:404 NOT_FOUND
+16:02:59.022 [reactor-http-nio-17] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:03:38.920 [reactor-http-nio-18] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:03:50.696 [reactor-http-nio-19] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:03:51.094 [reactor-http-nio-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:04:01.533 [reactor-http-nio-21] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:04:51.991 [reactor-http-nio-22] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:05:12.822 [reactor-http-nio-3] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:10:03.934 [reactor-http-nio-23] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:10:22.511 [reactor-http-nio-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:10:59.339 [reactor-http-nio-1] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:12:47.578 [reactor-http-nio-5] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:12:53.603 [reactor-http-nio-8] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version,异常信息:404 NOT_FOUND
+16:14:11.877 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version,异常信息:404 NOT_FOUND
+16:14:12.962 [reactor-http-nio-10] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version,异常信息:404 NOT_FOUND
+16:14:28.181 [reactor-http-nio-11] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version,异常信息:404 NOT_FOUND
+16:24:31.065 [reactor-http-nio-17] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:24:46.667 [reactor-http-nio-19] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:26:06.831 [reactor-http-nio-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:26:10.347 [reactor-http-nio-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+16:27:07.033 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:404 NOT_FOUND
+17:21:52.809 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:26:07.452 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:26:11.521 [reactor-http-nio-7] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:27:21.706 [reactor-http-nio-11] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:27:47.736 [reactor-http-nio-14] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:28:02.686 [reactor-http-nio-17] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:30:22.690 [reactor-http-nio-21] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:30:38.032 [reactor-http-nio-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:31:33.035 [reactor-http-nio-1] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:31:39.060 [reactor-http-nio-2] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:44:54.798 [reactor-http-nio-5] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dev-api/dataset/list,异常信息:404 NOT_FOUND
+17:52:10.259 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:404 NOT_FOUND
+17:56:54.198 [reactor-http-nio-5] ERROR c.a.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/dataset/list,错误信息:令牌不能为空
+18:00:30.151 [reactor-http-nio-5] ERROR c.a.g.f.AuthFilter - [unauthorizedResponse,104] - [鉴权异常处理]请求路径:/dataset/list,错误信息:令牌不能为空
+20:15:44.439 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:远程主机强迫关闭了一个现有的连接。
+20:15:49.553 [reactor-http-nio-8] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:远程主机强迫关闭了一个现有的连接。
+20:16:00.516 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:远程主机强迫关闭了一个现有的连接。
+20:16:05.548 [reactor-http-nio-10] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:远程主机强迫关闭了一个现有的连接。
+20:16:13.060 [reactor-http-nio-11] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:远程主机强迫关闭了一个现有的连接。
+20:16:18.082 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:远程主机强迫关闭了一个现有的连接。
+20:17:15.702 [reactor-http-nio-4] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:远程主机强迫关闭了一个现有的连接。
+20:17:20.809 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/auth/logout,异常信息:远程主机强迫关闭了一个现有的连接。
+20:18:04.285 [boundedElastic-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for aiplatform-system"

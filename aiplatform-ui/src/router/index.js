@@ -1,8 +1,4 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
-Vue.use(Router)
-
+import { createWebHashHistory, createRouter } from 'vue-router'
 /* Layout */
 import Layout from '@/layout'
 
@@ -37,7 +33,7 @@ export const constantRoutes = [
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect')
+        component: () => import('@/views/redirect/index.vue')
       }
     ]
   },
@@ -52,7 +48,7 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '/404',
+    path: "/:pathMatch(.*)*",
     component: () => import('@/views/error/404'),
     hidden: true
   },
@@ -64,10 +60,10 @@ export const constantRoutes = [
   {
     path: '',
     component: Layout,
-    redirect: 'index',
+    redirect: '/index',
     children: [
       {
-        path: 'index',
+        path: '/index',
         component: () => import('@/views/index'),
         name: 'Index',
         meta: { title: '首页', icon: 'dashboard', affix: true }
@@ -92,6 +88,55 @@ export const constantRoutes = [
 
 // 动态路由，基于用户权限动态去加载
 export const dynamicRoutes = [
+  {
+    path: '/dataset',
+    component: Layout,
+    name: 'Dataset',
+    meta: { 
+      title: '数据集管理',
+      icon: 'dataset',
+      roles: ['admin', 'user']
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/dataset/index'),
+        name: 'DatasetList',
+        meta: { 
+          title: '数据集列表',
+          icon: 'list',
+          roles: ['admin', 'user'],
+          permissions: ['dataset:list']
+        }
+      },
+      {
+        path: 'detail/:id(\\d+)',
+        component: () => import('@/views/dataset/detail'),
+        name: 'DatasetDetail',
+        meta: { 
+          title: '数据集详情',
+          icon: 'detail',
+          roles: ['admin', 'user'],
+          permissions: ['dataset:detail'],
+          activeMenu: '/dataset/index'
+        },
+        hidden: true
+      },
+      {
+        path: 'files',
+        component: () => import('@/views/dataset/version/files'),
+        name: 'DatasetVersionFiles',
+        meta: {
+          title: '版本文件',
+          icon: 'file',
+          roles: ['admin', 'user'],
+          permissions: ['dataset:version:query', 'dataset:file:list'],
+          activeMenu: '/dataset/index'
+        },
+        hidden: true
+      }
+    ]
+  },
   {
     path: '/system/user-auth',
     component: Layout,
@@ -161,23 +206,72 @@ export const dynamicRoutes = [
         meta: { title: '修改生成配置', activeMenu: '/tool/gen' }
       }
     ]
+  },
+  {
+    path: '/data',
+    component: Layout,
+    name: 'Data',
+    meta: { title: '数据管理', icon: 'data' },
+    children: [
+      {
+        path: 'file',
+        component: () => import('@/views/data/file/index'),
+        name: 'File',
+        meta: { title: '文件管理', icon: 'file' },
+        permissions: ['data:file:list']
+      },
+      {
+        path: 'directory',
+        component: () => import('@/views/data/directory/index'),
+        name: 'Directory',
+        meta: { title: '目录管理', icon: 'folder' },
+        permissions: ['data:directory:list']
+      },
+      {
+        path: 'tag',
+        component: () => import('@/views/data/tag/index'),
+        name: 'Tag',
+        meta: { title: '标签管理', icon: 'tag' },
+        permissions: ['data:tag:list']
+      },
+      {
+        path: 'metadata',
+        component: () => import('@/views/data/metadata/index'),
+        name: 'Metadata',
+        meta: { title: '元数据管理', icon: 'metadata' },
+        permissions: ['data:metadata:list']
+      }
+    ]
   }
 ]
 
-// 防止连续点击多次路由报错
-let routerPush = Router.prototype.push;
-let routerReplace = Router.prototype.replace;
-// push
-Router.prototype.push = function push(location) {
-  return routerPush.call(this, location).catch(err => err)
-}
-// replace
-Router.prototype.replace = function push(location) {
-  return routerReplace.call(this, location).catch(err => err)
-}
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: constantRoutes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { top: 0 }
+  },
+});
 
-export default new Router({
-  mode: 'history', // 去掉url中的#
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+// 路由调试
+router.beforeEach((to, from, next) => {
+  console.log('Route navigation:', {
+    to: {
+      path: to.path,
+      name: to.name,
+      params: to.params,
+      query: to.query,
+      meta: to.meta
+    },
+    from: {
+      path: from.path,
+      name: from.name
+    }
+  })
+  next()
 })
+
+export default router;

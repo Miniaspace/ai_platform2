@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aiplatform.dataset.mapper.DatasetVersionTagMapper">
+    
+    <resultMap type="DatasetVersionTag" id="DatasetVersionTagResult">
+        <result property="tagId"         column="tag_id"          />
+        <result property="versionId"     column="version_id"      />
+        <result property="tagName"       column="tag_name"        />
+        <result property="description"   column="description"     />
+        <result property="tagType"       column="tag_type"        />
+        <result property="tagColor"      column="tag_color"       />
+        <result property="orderNum"      column="order_num"       />
+        <result property="status"        column="status"          />
+        <result property="createBy"      column="create_by"       />
+        <result property="createTime"    column="create_time"     />
+        <result property="updateBy"      column="update_by"       />
+        <result property="updateTime"    column="update_time"     />
+        <result property="remark"        column="remark"          />
+    </resultMap>
+
+    <sql id="selectDatasetVersionTagVo">
+        select tag_id, version_id, tag_name, description, tag_type, tag_color, 
+        order_num, status, create_by, create_time, update_by, update_time, remark
+        from dataset_version_tag
+    </sql>
+
+    <select id="selectDatasetVersionTagById" parameterType="Long" resultMap="DatasetVersionTagResult">
+        <include refid="selectDatasetVersionTagVo"/>
+        where tag_id = #{tagId}
+    </select>
+
+    <select id="selectDatasetVersionTagList" parameterType="DatasetVersionTag" resultMap="DatasetVersionTagResult">
+        <include refid="selectDatasetVersionTagVo"/>
+        <where>
+            <if test="versionId != null "> and version_id = #{versionId}</if>
+            <if test="tagName != null  and tagName != ''"> and tag_name like concat('%', #{tagName}, '%')</if>
+            <if test="tagType != null  and tagType != ''"> and tag_type = #{tagType}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+        </where>
+        order by order_num
+    </select>
+
+    <select id="selectTagsByVersionId" parameterType="Long" resultMap="DatasetVersionTagResult">
+        <include refid="selectDatasetVersionTagVo"/>
+        where version_id = #{versionId}
+        order by order_num, create_time desc
+    </select>
+    
+    <insert id="insertDatasetVersionTag" parameterType="DatasetVersionTag" useGeneratedKeys="true" keyProperty="tagId">
+        insert into dataset_version_tag
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="versionId != null">version_id,</if>
+            <if test="tagName != null">tag_name,</if>
+            <if test="description != null">description,</if>
+            <if test="tagType != null">tag_type,</if>
+            <if test="tagColor != null">tag_color,</if>
+            <if test="orderNum != null">order_num,</if>
+            <if test="status != null">status,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="versionId != null">#{versionId},</if>
+            <if test="tagName != null">#{tagName},</if>
+            <if test="description != null">#{description},</if>
+            <if test="tagType != null">#{tagType},</if>
+            <if test="tagColor != null">#{tagColor},</if>
+            <if test="orderNum != null">#{orderNum},</if>
+            <if test="status != null">#{status},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <insert id="batchInsertDatasetVersionTag">
+        insert into dataset_version_tag (version_id, tag_name, description, tag_type, tag_color, 
+        order_num, status, create_by, create_time, update_by, update_time, remark)
+        values
+        <foreach item="item" collection="list" separator=",">
+            (#{item.versionId}, #{item.tagName}, #{item.description}, #{item.tagType}, #{item.tagColor},
+            #{item.orderNum}, #{item.status}, #{item.createBy}, #{item.createTime},
+            #{item.updateBy}, #{item.updateTime}, #{item.remark})
+        </foreach>
+    </insert>
+
+    <update id="updateDatasetVersionTag" parameterType="DatasetVersionTag">
+        update dataset_version_tag
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="tagName != null">tag_name = #{tagName},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="tagType != null">tag_type = #{tagType},</if>
+            <if test="tagColor != null">tag_color = #{tagColor},</if>
+            <if test="orderNum != null">order_num = #{orderNum},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where tag_id = #{tagId}
+    </update>
+
+    <delete id="deleteDatasetVersionTagById" parameterType="Long">
+        delete from dataset_version_tag where tag_id = #{tagId}
+    </delete>
+
+    <delete id="deleteDatasetVersionTagByIds" parameterType="Long">
+        delete from dataset_version_tag where tag_id in 
+        <foreach item="tagId" collection="array" open="(" separator="," close=")">
+            #{tagId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByVersionId" parameterType="Long">
+        delete from dataset_version_tag where version_id = #{versionId}
+    </delete>
+
+    <select id="checkTagNameUnique" resultType="int">
+        select count(1) from dataset_version_tag 
+        where version_id = #{versionId} and tag_name = #{tagName}
+    </select>
+
+    <select id="findVersionByTag" resultMap="DatasetVersionTagResult">
+        select t.* from dataset_version_tag t
+        inner join dataset_version v on t.version_id = v.version_id
+        where v.dataset_id = #{datasetId} and t.tag_name = #{tagName}
+        limit 1
+    </select>
+</mapper> 

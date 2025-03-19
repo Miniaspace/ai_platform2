@@ -1,8 +1,9 @@
-import store from '@/store'
+import useUserStore from '@/store/modules/user'
 
 function authPermission(permission) {
   const all_permission = "*:*:*";
-  const permissions = store.getters && store.getters.permissions
+  const permissions = useUserStore().permissions
+  console.log(permissions)  
   if (permission && permission.length > 0) {
     return permissions.some(v => {
       return all_permission === v || v === permission
@@ -14,7 +15,7 @@ function authPermission(permission) {
 
 function authRole(role) {
   const super_admin = "admin";
-  const roles = store.getters && store.getters.roles
+  const roles = useUserStore().roles
   if (role && role.length > 0) {
     return roles.some(v => {
       return super_admin === v || v === role

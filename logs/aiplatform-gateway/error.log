@@ -1,1 +1,23 @@
-16:49:44.927 [boundedElastic-2] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/schedule/job/list,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for aiplatform-job"
+09:33:42.911 [boundedElastic-24] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for aiplatform-dataset"
+09:34:52.185 [boundedElastic-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/version/list,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for aiplatform-dataset"
+09:51:21.477 [boundedElastic-38] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/dataset/list,异常信息:503 SERVICE_UNAVAILABLE "Unable to find instance for aiplatform-dataset"
+12:27:05.656 [reactor-http-nio-17] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:27:16.923 [reactor-http-nio-19] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:27:23.938 [reactor-http-nio-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:27:49.323 [reactor-http-nio-21] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:28:25.323 [reactor-http-nio-22] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:28:55.475 [reactor-http-nio-1] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:29:35.547 [reactor-http-nio-2] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:30:11.356 [reactor-http-nio-6] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:30:30.295 [reactor-http-nio-8] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:30:47.608 [reactor-http-nio-15] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:32:09.078 [reactor-http-nio-20] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:32:32.149 [reactor-http-nio-1] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:33:18.051 [reactor-http-nio-3] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:34:19.050 [reactor-http-nio-5] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:35:11.641 [reactor-http-nio-8] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:35:16.799 [reactor-http-nio-10] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+12:36:16.829 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+13:20:18.448 [reactor-http-nio-7] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+13:25:13.066 [reactor-http-nio-9] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0
+13:25:32.444 [reactor-http-nio-12] ERROR c.a.g.h.GatewayExceptionHandler - [handle,52] - [网关异常处理]请求路径:/system/user/getInfo,异常信息:JWT strings must contain exactly 2 period characters. Found: 0

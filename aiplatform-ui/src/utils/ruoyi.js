@@ -216,7 +216,7 @@ export function getNormalPath(p) {
   if (res[res.length - 1] === '/') {
     return res.slice(0, res.length - 1)
   }
-  return res
+  return res;
 }
 
 // 验证是否为blob格式

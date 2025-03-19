@@ -253,6 +253,20 @@
                 <version>${aiplatform.version}</version>
             </dependency>
 
+            <!-- MinIO -->
+            <dependency>
+                <groupId>com.aiplatform</groupId>
+                <artifactId>aiplatform-common-minio</artifactId>
+                <version>${aiplatform.version}</version>
+            </dependency>
+
+            <!-- MinIO Java SDK -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -278,6 +292,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>

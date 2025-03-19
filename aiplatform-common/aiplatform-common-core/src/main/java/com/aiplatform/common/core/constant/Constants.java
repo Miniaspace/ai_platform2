@@ -132,4 +132,22 @@ public class Constants
      */
     public static final String[] JOB_ERROR_STR = { "java.net.URL", "javax.naming.InitialContext", "org.yaml.snakeyaml",
             "org.springframework", "org.apache", "com.aiplatform.common.core.utils.file" };
+
+    /** 版本状态：草稿 */
+    public static final String VERSION_STATUS_DRAFT = "DRAFT";
+
+    /** 版本状态：已发布 */
+    public static final String VERSION_STATUS_PUBLISHED = "PUBLISHED";
+
+    /** 版本状态：已废弃 */
+    public static final String VERSION_STATUS_DISCARDED = "DISCARDED";
+
+    /** 变更类型：新增 */
+    public static final String CHANGE_TYPE_ADD = "ADD";
+
+    /** 变更类型：修改 */
+    public static final String CHANGE_TYPE_MODIFY = "MODIFY";
+
+    /** 变更类型：删除 */
+    public static final String CHANGE_TYPE_DELETE = "DELETE";
 }

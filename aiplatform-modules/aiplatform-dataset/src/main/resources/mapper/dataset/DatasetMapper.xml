@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aiplatform.dataset.mapper.DatasetMapper">
+    
+    <resultMap type="Dataset" id="DatasetResult">
+        <id     property="datasetId"      column="dataset_id"      />
+        <result property="datasetName"    column="dataset_name"    />
+        <result property="description"    column="description"     />
+        <result property="datasetType"    column="dataset_type"    />
+        <result property="labelType"      column="label_type"      />
+        <result property="status"         column="status"          />
+        <result property="storagePath"    column="storage_path"    />
+        <result property="version"        column="version"         />
+        <result property="delFlag"        column="del_flag"        />
+        <result property="createBy"       column="create_by"       />
+        <result property="createTime"     column="create_time"     />
+        <result property="updateBy"       column="update_by"       />
+        <result property="updateTime"     column="update_time"     />
+        <result property="remark"         column="remark"          />
+    </resultMap>
+
+    <sql id="selectDatasetVo">
+        select dataset_id, dataset_name, description, dataset_type, label_type, status, storage_path, version, del_flag, create_by, create_time, update_by, update_time, remark 
+        from dataset
+    </sql>
+
+    <select id="selectDatasetList" parameterType="Dataset" resultMap="DatasetResult">
+        <include refid="selectDatasetVo"/>
+        <where>  
+            <if test="datasetName != null  and datasetName != ''"> and dataset_name like concat('%', #{datasetName}, '%')</if>
+            <if test="datasetType != null  and datasetType != ''"> and dataset_type = #{datasetType}</if>
+            <if test="labelType != null  and labelType != ''"> and label_type = #{labelType}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            and del_flag = '0'
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectDatasetById" parameterType="Long" resultMap="DatasetResult">
+        <include refid="selectDatasetVo"/>
+        where dataset_id = #{datasetId} and del_flag = '0'
+    </select>
+        
+    <insert id="insertDataset" parameterType="Dataset" useGeneratedKeys="true" keyProperty="datasetId">
+        insert into dataset
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="datasetName != null">dataset_name,</if>
+            <if test="description != null">description,</if>
+            <if test="datasetType != null">dataset_type,</if>
+            <if test="labelType != null">label_type,</if>
+            <if test="status != null">status,</if>
+            <if test="storagePath != null">storage_path,</if>
+            <if test="version != null">version,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="datasetName != null">#{datasetName},</if>
+            <if test="description != null">#{description},</if>
+            <if test="datasetType != null">#{datasetType},</if>
+            <if test="labelType != null">#{labelType},</if>
+            <if test="status != null">#{status},</if>
+            <if test="storagePath != null">#{storagePath},</if>
+            <if test="version != null">#{version},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDataset" parameterType="Dataset">
+        update dataset
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="datasetName != null">dataset_name = #{datasetName},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="datasetType != null">dataset_type = #{datasetType},</if>
+            <if test="labelType != null">label_type = #{labelType},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="storagePath != null">storage_path = #{storagePath},</if>
+            <if test="version != null">version = #{version},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where dataset_id = #{datasetId}
+    </update>
+
+    <delete id="deleteDatasetById" parameterType="Long">
+        update dataset set del_flag = '2' where dataset_id = #{datasetId}
+    </delete>
+
+    <delete id="deleteDatasetByIds" parameterType="String">
+        update dataset set del_flag = '2' where dataset_id in 
+        <foreach item="datasetId" collection="array" open="(" separator="," close=")">
+            #{datasetId}
+        </foreach>
+    </delete>
+</mapper> 

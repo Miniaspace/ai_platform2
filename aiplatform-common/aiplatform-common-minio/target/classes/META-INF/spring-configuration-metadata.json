@@ -1,0 +1,36 @@
+{
+  "groups": [
+    {
+      "name": "minio",
+      "type": "com.aiplatform.minio.config.MinioConfig",
+      "sourceType": "com.aiplatform.minio.config.MinioConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "minio.access-key",
+      "type": "java.lang.String",
+      "description": "访问密钥",
+      "sourceType": "com.aiplatform.minio.config.MinioConfig"
+    },
+    {
+      "name": "minio.bucket-name",
+      "type": "java.lang.String",
+      "description": "存储桶名称",
+      "sourceType": "com.aiplatform.minio.config.MinioConfig"
+    },
+    {
+      "name": "minio.secret-key",
+      "type": "java.lang.String",
+      "description": "密钥",
+      "sourceType": "com.aiplatform.minio.config.MinioConfig"
+    },
+    {
+      "name": "minio.url",
+      "type": "java.lang.String",
+      "description": "服务地址",
+      "sourceType": "com.aiplatform.minio.config.MinioConfig"
+    }
+  ],
+  "hints": []
+}

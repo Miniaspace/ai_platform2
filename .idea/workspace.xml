@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e16aa817-22b2-49a2-9287-2be41888cd3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-minio/src/main/java/com/aiplatform/minio/config/MinioConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/html/ie.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/api/data/directory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/api/data/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/api/data/metadata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/api/data/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/icons/svg/moon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/icons/svg/redis.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/icons/svg/sunny.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/variables.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/CreateMetadataModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/FilePreview.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/FileUpload.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/MetadataManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/SvgIcon/svgicon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/TagManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/UpdateMetadataModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/VersionManagement.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/directive/common/copyText.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/dynamicTitle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/drawingDefalut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/data/directory/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/data/metadata/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/data/tag/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/redirect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/vite.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/vite/plugins/auto-import.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/vite/plugins/compression.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/vite/plugins/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/vite/plugins/setup-extend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiplatform-ui/vite/plugins/svg-icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-api/aiplatform-api-system/src/main/java/com/aiplatform/system/api/domain/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-api/aiplatform-api-system/src/main/java/com/aiplatform/system/api/domain/SysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java/com/aiplatform/common/core/annotation/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java/com/aiplatform/common/core/annotation/Excel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java/com/aiplatform/common/core/constant/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java/com/aiplatform/common/core/constant/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java/com/aiplatform/common/core/utils/poi/ExcelUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-common/aiplatform-common-core/src/main/java/com/aiplatform/common/core/utils/poi/ExcelUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/RuoYiFileApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/config/MinioConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/config/ResourcesConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/controller/SysFileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/service/FastDfsSysFileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/service/ISysFileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/service/LocalSysFileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/service/MinioSysFileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/java/com/aiplatform/file/utils/FileUploadUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-file/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/RuoYiGenApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/config/GenConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/controller/GenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/domain/GenTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/domain/GenTableColumn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/mapper/GenTableColumnMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/mapper/GenTableMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/service/GenTableColumnServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/service/GenTableServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/service/IGenTableColumnService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/service/IGenTableService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/util/GenUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/util/VelocityInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/java/com/aiplatform/gen/util/VelocityUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/mapper/generator/GenTableColumnMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/mapper/generator/GenTableMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/java/controller.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/java/domain.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/java/mapper.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/java/service.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/java/serviceImpl.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/java/sub-domain.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/js/api.js.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/sql/sql.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/vue/index-tree.vue.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/vue/index.vue.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/vue/v3/index-tree.vue.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/vue/v3/index.vue.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-gen/src/main/resources/vm/xml/mapper.xml.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/RuoYiJobApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/config/ScheduleConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/controller/SysJobController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/controller/SysJobLogController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/domain/SysJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/domain/SysJobLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/mapper/SysJobLogMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/mapper/SysJobMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/service/ISysJobLogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/service/ISysJobService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/service/SysJobLogServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/service/SysJobServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/task/RyTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/util/AbstractQuartzJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/util/CronUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/util/JobInvokeUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/util/QuartzDisallowConcurrentExecution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/util/QuartzJobExecution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/java/com/aiplatform/job/util/ScheduleUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/resources/mapper/job/SysJobLogMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/aiplatform-job/src/main/resources/mapper/job/SysJobMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-modules/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/.env.staging" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/.env.staging" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/bin/build.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/bin/build.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/bin/package.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/bin/package.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/bin/run-web.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/bin/run-web.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/build/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/public/html/ie.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/public/styles/theme-chalk/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/api/system/dict/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/api/system/dict/type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/api/system/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/api/system/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/icons/svgo.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/logo/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/logo/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/element-ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/element-ui.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/element-variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/ruoyi.scss" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/ruoyi.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/assets/styles/variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Breadcrumb/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Breadcrumb/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/day.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/day.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/hour.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/hour.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/min.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/min.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/month.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/month.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/result.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/result.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/second.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/second.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/week.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/week.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/year.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Crontab/year.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/DictData/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/DictTag/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/DictTag/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Editor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Editor/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/FileUpload/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/FileUpload/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Hamburger/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Hamburger/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/HeaderSearch/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/HeaderSearch/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/IconSelect/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/IconSelect/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/IconSelect/requireIcons.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/IconSelect/requireIcons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/ImagePreview/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/ImagePreview/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/ImageUpload/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/ImageUpload/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Pagination/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Pagination/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/PanThumb/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/ParentView/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/ParentView/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/RightPanel/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/RightToolbar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/RightToolbar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/RuoYi/Doc/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/RuoYi/Doc/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/RuoYi/Git/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/RuoYi/Git/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/Screenfull/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/Screenfull/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/SizeSelect/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/SizeSelect/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/SvgIcon/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/SvgIcon/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/ThemePicker/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/TopNav/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/TopNav/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/components/iFrame/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/components/iFrame/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/dialog/drag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/dialog/dragHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/dialog/dragWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/directive/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/module/clipboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/permission/hasPermi.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/directive/permission/hasPermi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/directive/permission/hasRole.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/directive/permission/hasRole.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/AppMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/AppMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/IframeToggle/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/IframeToggle/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/InnerLink/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/InnerLink/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Settings/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Settings/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/FixiOSBug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/Item.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/Link.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/Link.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/Logo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/SidebarItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/SidebarItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/Sidebar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/TagsView/ScrollPane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/TagsView/ScrollPane.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/TagsView/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/TagsView/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/layout/mixin/ResizeHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/permission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/plugins/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/plugins/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/plugins/download.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/plugins/download.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/plugins/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/plugins/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/plugins/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/plugins/tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/plugins/tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/getters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/dict.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/dict.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/permission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/tagsView.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/tagsView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/store/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict/Dict.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict/DictConverter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict/DictData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict/DictMeta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict/DictOptions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/dict/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/css.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/drawingDefault.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/html.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/generator/render.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/permission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/utils/ruoyi.js" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/utils/ruoyi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/dashboard/BarChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/dashboard/LineChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/dashboard/PanelGroup.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/dashboard/PieChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/dashboard/RaddarChart.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/dashboard/mixins/resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/error/401.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/error/401.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/error/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/error/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/index_v1.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/monitor/job/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/monitor/job/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/monitor/job/log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/monitor/job/log.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/monitor/online/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/monitor/online/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/redirect.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/config/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/config/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/dept/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/dept/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/dict/data.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/dict/data.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/dict/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/dict/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/logininfor/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/logininfor/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/menu/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/menu/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/notice/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/notice/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/operlog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/operlog/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/post/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/post/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/role/authUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/role/authUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/role/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/role/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/role/selectUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/role/selectUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/authRole.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/authRole.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/resetPwd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/resetPwd.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/userAvatar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/userAvatar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/userInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/system/user/profile/userInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/CodeTypeDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/CodeTypeDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/DraggableItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/DraggableItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/IconsDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/IconsDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/RightPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/RightPanel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/TreeNodeDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/TreeNodeDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/build/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/basicInfoForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/basicInfoForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/editTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/editTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/genInfoForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/genInfoForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/importTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/importTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aiplatform-ui/src/views/tool/gen/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiplatform-ui/vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/aiplatform-auth/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/aiplatform-auth/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/aiplatform-auth/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/aiplatform-auth/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/aiplatform-gateway/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/aiplatform-gateway/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/aiplatform-gateway/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/aiplatform-gateway/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/aiplatform-system/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/aiplatform-system/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/aiplatform-system/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/aiplatform-system/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/ry_seata_20210128.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2uOo2pS3RlbjtdgmBJ5Ws5WdPlU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.ai_platform [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ai_platform [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aiplatform-dataset [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aiplatform-dataset [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AiAuthApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AiDatasetApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DatasetApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.RuoYiSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/platform/ai_platform/aiplatform-modules/aiplatform-dataset/src/main/java/com/aiplatform/dataset/config&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\platform\ai_platform\aiplatform-modules\aiplatform-dataset\src\main\java\com\aiplatform\dataset\config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RuoYiSystemApplication">
+    <configuration name="AiAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="aiplatform-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aiplatform.auth.AiAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AiDatasetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="aiplatform-dataset" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aiplatform.dataset.AiDatasetApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="aiplatform-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aiplatform.gateway.AiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RuoYiSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="aiplatform-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aiplatform.system.RuoYiSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AiAuthApplication" />
+      <item itemvalue="Spring Boot.AiDatasetApplication" />
+      <item itemvalue="Spring Boot.AiGatewayApplication" />
+      <item itemvalue="Spring Boot.RuoYiSystemApplication" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e16aa817-22b2-49a2-9287-2be41888cd3a" name="Changes" comment="" />
+      <created>1742128776719</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742128776719</updated>
+      <workItem from="1742128777827" duration="2079000" />
+      <workItem from="1742257446836" duration="15745000" />
+      <workItem from="1742277090136" duration="7615000" />
+      <workItem from="1742288559851" duration="7581000" />
+      <workItem from="1742343802832" duration="11638000" />
+      <workItem from="1742360256768" duration="4773000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="4f691277-f763-473a-961d-6bae4abc5879" value="TOOL_WINDOW" />
+        <entry key="ad381e91-1606-41a4-abf3-b8600e92e142" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="4f691277-f763-473a-961d-6bae4abc5879">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/platform/ai_platform/aiplatform-ui/src/store" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="ad381e91-1606-41a4-abf3-b8600e92e142">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/platform/ai_platform/aiplatform-ui" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aiplatform-modules/aiplatform-dataset/src/main/java/com/aiplatform/dataset/service/impl/DatasetVersionServiceImpl.java</url>
+          <line>303</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aiplatform-modules/aiplatform-dataset/src/main/java/com/aiplatform/dataset/service/impl/DatasetVersionServiceImpl.java</url>
+          <line>302</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aiplatform-modules/aiplatform-dataset/src/main/java/com/aiplatform/dataset/controller/DatasetVersionController.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-minio/src/main/java/com/aiplatform/minio/service/impl/MinioServiceImpl.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aiplatform-common/aiplatform-common-minio/src/main/java/com/aiplatform/minio/service/impl/MinioServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/aiplatform-modules/aiplatform-dataset/src/main/java/com/aiplatform/dataset/controller/DatasetVersionController.java</url>
+          <line>119</line>
+          <properties class="com.aiplatform.dataset.controller.DatasetVersionController" method="checkVersionNameUnique">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

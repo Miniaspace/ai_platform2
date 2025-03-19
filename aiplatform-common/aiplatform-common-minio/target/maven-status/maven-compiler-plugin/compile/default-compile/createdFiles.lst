@@ -1,0 +1,4 @@
+com\aiplatform\minio\service\IMinioService.class
+com\aiplatform\minio\service\impl\MinioServiceImpl.class
+META-INF\spring-configuration-metadata.json
+com\aiplatform\minio\config\MinioConfig.class

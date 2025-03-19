@@ -10,9 +10,7 @@
 
     <modules>
         <module>aiplatform-system</module>
-        <module>aiplatform-gen</module>
-        <module>aiplatform-job</module>
-        <module>aiplatform-file</module>
+        <module>aiplatform-dataset</module>
     </modules>
 
     <artifactId>aiplatform-modules</artifactId>

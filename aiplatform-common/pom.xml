@@ -17,6 +17,7 @@
         <module>aiplatform-common-security</module>
         <module>aiplatform-common-datascope</module>
         <module>aiplatform-common-datasource</module>
+        <module>aiplatform-common-minio</module>
     </modules>
 
     <artifactId>aiplatform-common</artifactId>

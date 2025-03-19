@@ -1,0 +1,73 @@
+# Spring配置
+spring:
+  # MinIO配置
+  minio:
+    url: http://localhost:9000
+    accessKey: minioadmin
+    secretKey: minioadmin
+    bucketName: dataset
+
+# 数据集配置
+dataset:
+  # 文件存储配置
+  file:
+    # 文件存储路径
+    basePath: /dataset/files
+    # 临时文件路径
+    tempPath: /dataset/temp
+    # 支持的文件类型
+    allowTypes: .jpg,.jpeg,.png,.gif,.bmp,.txt,.pdf,.doc,.docx,.xls,.xlsx,.csv,.json,.xml
+    # 文件大小限制（单位：MB）
+    maxSize: 500
+  # 版本配置
+  version:
+    # 版本命名规则
+    namePattern: ^[a-zA-Z0-9_.-]+$
+    # 最大版本数
+    maxCount: 100
+    # 版本文件存储路径
+    filePath: /dataset/versions
+  # 预览配置
+  preview:
+    # 图片预览支持的格式
+    imageTypes: .jpg,.jpeg,.png,.gif,.bmp
+    # 文档预览支持的格式
+    docTypes: .txt,.pdf,.doc,.docx
+    # 预览图片最大尺寸（单位：KB）
+    maxImageSize: 1024
+    # 预览缓存时间（单位：分钟）
+    cacheTime: 30
+
+# 线程池配置
+thread:
+  pool:
+    # 核心线程池大小
+    corePoolSize: 10
+    # 最大线程池大小
+    maxPoolSize: 20
+    # 队列容量
+    queueCapacity: 200
+    # 线程池维护线程所允许的空闲时间
+    keepAliveSeconds: 300
+
+# 接口限流配置
+ratelimit:
+  # 限流开关
+  enabled: true
+  # 限流策略(1:直接拒绝 2:队列等待)
+  policy: 1
+  # 限流时间窗口(秒)
+  time: 60
+  # 限流次数
+  count: 100
+
+# 缓存配置
+cache:
+  # 缓存开关
+  enabled: true
+  # 缓存类型（redis/ehcache）
+  type: redis
+  # 缓存过期时间（分钟）
+  expiration: 30
+  # 缓存名称前缀
+  prefix: "dataset:" 

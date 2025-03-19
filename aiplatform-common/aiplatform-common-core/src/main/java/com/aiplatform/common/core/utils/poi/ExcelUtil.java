@@ -836,7 +836,7 @@ public class ExcelUtil<T>
             dataFont.setFontHeightInPoints((short) 10);
             dataFont.setColor(excel.color().index);
             style.setFont(dataFont);
-            if (ColumnType.TEXT == excel.cellType())
+            if (ColumnType.STRING == excel.cellType())
             {
                 DataFormat dataFormat = wb.createDataFormat();
                 style.setDataFormat(dataFormat.getFormat("@"));
@@ -877,7 +877,7 @@ public class ExcelUtil<T>
      */
     public void setCellVo(Object value, Excel attr, Cell cell)
     {
-        if (ColumnType.STRING == attr.cellType() || ColumnType.TEXT == attr.cellType())
+        if (ColumnType.STRING == attr.cellType())
         {
             String cellValue = Convert.toStr(value);
             // 对于任何以表达式触发字符 =-+@开头的单元格，直接使用tab字符作为前缀，防止CSV注入。
@@ -1574,7 +1574,7 @@ public class ExcelUtil<T>
      */
     public boolean isSubList()
     {
-        return StringUtils.isNotNull(subFields) && subFields.size() > 0;
+        return StringUtils.isNotNull(subMethod) && StringUtils.isNotNull(subFields);
     }
 
     /**
@@ -1582,7 +1582,7 @@ public class ExcelUtil<T>
      */
     public boolean isSubListValue(T vo)
     {
-        return StringUtils.isNotNull(subFields) && subFields.size() > 0 && StringUtils.isNotNull(getListCellValue(vo)) && getListCellValue(vo).size() > 0;
+        return StringUtils.isNotNull(subMethod) && StringUtils.isNotNull(subFields) && StringUtils.isNotNull(getListCellValue(vo));
     }
 
     /**

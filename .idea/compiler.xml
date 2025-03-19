@@ -2,19 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="aiplatform-common-minio" />
         <module name="aiplatform-common-log" />
         <module name="aiplatform-common-redis" />
-        <module name="aiplatform-gen" />
+        <module name="aiplatform-dataset" />
         <module name="aiplatform-gateway" />
         <module name="aiplatform-api-system" />
-        <module name="aiplatform-file" />
         <module name="aiplatform-system" />
         <module name="aiplatform-common-seata" />
-        <module name="aiplatform-job" />
         <module name="aiplatform-common-core" />
         <module name="aiplatform-auth" />
         <module name="aiplatform-common-datasource" />
@@ -24,8 +24,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="aiplatform-visual" target="1.8" />
-      <module name="aiplatform-visual-monitor" target="1.8" />
+      <module name="aiplatform-file" target="1.8" />
+      <module name="aiplatform-gen" target="1.8" />
+      <module name="aiplatform-job" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aiplatform.dataset.mapper.DatasetVersionFileMapper">
+    
+    <resultMap type="DatasetVersionFile" id="DatasetVersionFileResult">
+        <id     property="fileId"       column="file_id"        />
+        <result property="fileName"     column="file_name"      />
+        <result property="filePath"     column="file_path"      />
+        <result property="fileType"     column="file_type"      />
+        <result property="fileSize"     column="file_size"      />
+        <result property="md5"          column="md5"            />
+        <result property="sha1"         column="sha1"           />
+        <result property="fileHash"     column="file_hash"      />
+        <result property="metadata"     column="metadata"       />
+        <result property="fileStatus"   column="file_status"    />
+        <result property="versionId"    column="version_id"     />
+        <result property="parentId"     column="parent_id"      />
+        <result property="createBy"     column="create_by"      />
+        <result property="createTime"   column="create_time"    />
+        <result property="updateBy"     column="update_by"      />
+        <result property="updateTime"   column="update_time"    />
+        <result property="remark"       column="remark"         />
+    </resultMap>
+
+    <sql id="selectDatasetVersionFileVo">
+        select file_id, file_name, file_path, file_type, file_size, md5, sha1, file_hash,
+        metadata, file_status, version_id, dataset_id, parent_id, create_by, create_time, update_by, 
+        update_time, remark
+        from dataset_version_file
+    </sql>
+
+    <select id="selectDatasetVersionFileList" parameterType="DatasetVersionFile" resultMap="DatasetVersionFileResult">
+        <include refid="selectDatasetVersionFileVo"/>
+        <where>
+            <if test="fileName != null  and fileName != ''"> and file_name like concat('%', #{fileName}, '%')</if>
+            <if test="filePath != null  and filePath != ''"> and file_path = #{filePath}</if>
+            <if test="fileType != null  and fileType != ''"> and file_type = #{fileType}</if>
+            <if test="md5 != null  and md5 != ''"> and md5 = #{md5}</if>
+            <if test="sha1 != null  and sha1 != ''"> and sha1 = #{sha1}</if>
+            <if test="fileHash != null  and fileHash != ''"> and file_hash = #{fileHash}</if>
+            <if test="fileStatus != null  and fileStatus != ''"> and file_status = #{fileStatus}</if>
+            <if test="versionId != null "> and version_id = #{versionId}</if>
+            <if test="parentId != null "> and parent_id = #{parentId}</if>
+        </where>
+    </select>
+    
+    <select id="selectDatasetVersionFileById" parameterType="Long" resultMap="DatasetVersionFileResult">
+        <include refid="selectDatasetVersionFileVo"/>
+        where file_id = #{fileId}
+    </select>
+
+    <select id="selectDatasetVersionFileByHash" resultMap="DatasetVersionFileResult">
+        <include refid="selectDatasetVersionFileVo"/>
+        where md5 = #{md5} and sha1 = #{sha1}
+        limit 1
+    </select>
+
+    <select id="selectFilesByVersionId" parameterType="Long" resultMap="DatasetVersionFileResult">
+        <include refid="selectDatasetVersionFileVo"/>
+        where version_id = #{versionId}
+    </select>
+
+    <insert id="insertDatasetVersionFile" parameterType="DatasetVersionFile" useGeneratedKeys="true" keyProperty="fileId">
+        insert into dataset_version_file
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fileName != null">file_name,</if>
+            <if test="filePath != null">file_path,</if>
+            <if test="fileType != null">file_type,</if>
+            <if test="fileSize != null">file_size,</if>
+            <if test="md5 != null">md5,</if>
+            <if test="sha1 != null">sha1,</if>
+            <if test="fileHash != null">file_hash,</if>
+            <if test="metadata != null">metadata,</if>
+            <if test="fileStatus != null">file_status,</if>
+            <if test="versionId != null">version_id,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fileName != null">#{fileName},</if>
+            <if test="filePath != null">#{filePath},</if>
+            <if test="fileType != null">#{fileType},</if>
+            <if test="fileSize != null">#{fileSize},</if>
+            <if test="md5 != null">#{md5},</if>
+            <if test="sha1 != null">#{sha1},</if>
+            <if test="fileHash != null">#{fileHash},</if>
+            <if test="metadata != null">#{metadata},</if>
+            <if test="fileStatus != null">#{fileStatus},</if>
+            <if test="versionId != null">#{versionId},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDatasetVersionFile" parameterType="DatasetVersionFile">
+        update dataset_version_file
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="fileName != null">file_name = #{fileName},</if>
+            <if test="filePath != null">file_path = #{filePath},</if>
+            <if test="fileType != null">file_type = #{fileType},</if>
+            <if test="fileSize != null">file_size = #{fileSize},</if>
+            <if test="md5 != null">md5 = #{md5},</if>
+            <if test="sha1 != null">sha1 = #{sha1},</if>
+            <if test="fileHash != null">file_hash = #{fileHash},</if>
+            <if test="metadata != null">metadata = #{metadata},</if>
+            <if test="fileStatus != null">file_status = #{fileStatus},</if>
+            <if test="versionId != null">version_id = #{versionId},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where file_id = #{fileId}
+    </update>
+
+    <delete id="deleteDatasetVersionFileById" parameterType="Long">
+        update dataset_version_file set file_status = '1' where file_id = #{fileId}
+    </delete>
+
+    <delete id="deleteDatasetVersionFileByIds" parameterType="String">
+        update dataset_version_file set file_status = '1' where file_id in 
+        <foreach item="fileId" collection="array" open="(" separator="," close=")">
+            #{fileId}
+        </foreach>
+    </delete>
+</mapper> 

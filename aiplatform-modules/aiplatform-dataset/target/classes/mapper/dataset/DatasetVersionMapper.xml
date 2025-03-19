@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aiplatform.dataset.mapper.DatasetVersionMapper">
+    
+    <resultMap type="DatasetVersion" id="DatasetVersionResult">
+        <result property="versionId"     column="version_id"      />
+        <result property="datasetId"     column="dataset_id"      />
+        <result property="versionName"   column="version_name"    />
+        <result property="versionDesc"   column="description"     />
+        <result property="parentVersionId" column="parent_version_id" />
+        <result property="versionStatus" column="status"          />
+        <result property="isCurrent"     column="is_current"      />
+        <result property="createBy"      column="create_by"       />
+        <result property="createTime"    column="create_time"     />
+        <result property="updateBy"      column="update_by"       />
+        <result property="updateTime"    column="update_time"     />
+        <result property="remark"        column="remark"          />
+    </resultMap>
+
+    <sql id="selectDatasetVersionVo">
+        select version_id, dataset_id, version_name, description, parent_version_id, status, is_current,
+        create_by, create_time, update_by, update_time, remark
+        from dataset_version
+    </sql>
+
+    <select id="selectDatasetVersionById" parameterType="Long" resultMap="DatasetVersionResult">
+        <include refid="selectDatasetVersionVo"/>
+        where version_id = #{versionId}
+    </select>
+
+    <select id="selectDatasetVersionList" parameterType="DatasetVersion" resultMap="DatasetVersionResult">
+        <include refid="selectDatasetVersionVo"/>
+        <where>
+            <if test="datasetId != null "> and dataset_id = #{datasetId}</if>
+            <if test="versionName != null  and versionName != ''"> and version_name like concat('%', #{versionName}, '%')</if>
+            <if test="versionStatus != null  and versionStatus != ''"> and status = #{versionStatus}</if>
+            <if test="isCurrent != null "> and is_current = #{isCurrent}</if>
+        </where>
+    </select>
+
+    <select id="selectCurrentVersion" parameterType="Long" resultMap="DatasetVersionResult">
+        <include refid="selectDatasetVersionVo"/>
+        where dataset_id = #{datasetId} and is_current = 1
+    </select>
+    
+    <insert id="insertDatasetVersion" parameterType="DatasetVersion" useGeneratedKeys="true" keyProperty="versionId">
+        insert into dataset_version
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="datasetId != null">dataset_id,</if>
+            <if test="versionName != null">version_name,</if>
+            <if test="versionDesc != null">description,</if>
+            <if test="parentVersionId != null">parent_version_id,</if>
+            <if test="versionStatus != null">status,</if>
+            <if test="isCurrent != null">is_current,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="datasetId != null">#{datasetId},</if>
+            <if test="versionName != null">#{versionName},</if>
+            <if test="versionDesc != null">#{versionDesc},</if>
+            <if test="parentVersionId != null">#{parentVersionId},</if>
+            <if test="versionStatus != null">#{versionStatus},</if>
+            <if test="isCurrent != null">#{isCurrent},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updateDatasetVersion" parameterType="DatasetVersion">
+        update dataset_version
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="datasetId != null">dataset_id = #{datasetId},</if>
+            <if test="versionName != null">version_name = #{versionName},</if>
+            <if test="versionDesc != null">description = #{versionDesc},</if>
+            <if test="parentVersionId != null">parent_version_id = #{parentVersionId},</if>
+            <if test="versionStatus != null">status = #{versionStatus},</if>
+            <if test="isCurrent != null">is_current = #{isCurrent},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where version_id = #{versionId}
+    </update>
+
+    <delete id="deleteDatasetVersionById" parameterType="Long">
+        delete from dataset_version where version_id = #{versionId}
+    </delete>
+
+    <delete id="deleteDatasetVersionByIds" parameterType="Long">
+        delete from dataset_version where version_id in 
+        <foreach item="versionId" collection="array" open="(" separator="," close=")">
+            #{versionId}
+        </foreach>
+    </delete>
+
+    <update id="updateCurrentVersion">
+        update dataset_version set is_current = 0 where dataset_id = #{datasetId};
+        update dataset_version set is_current = 1 where version_id = #{versionId}
+    </update>
+    
+    <!-- 检查版本名称是否唯一 -->
+    <select id="checkVersionNameUnique" resultType="int">
+        select count(1) from dataset_version 
+        where dataset_id = #{datasetId} and version_name = #{versionName} and status != 'DISCARDED'
+    </select>
+    
+    <!-- 查询数据集的所有版本 -->
+    <select id="selectVersionsByDatasetId" parameterType="Long" resultMap="DatasetVersionResult">
+        <include refid="selectDatasetVersionVo"/>
+        where dataset_id = #{datasetId}
+        order by create_time desc
+    </select>
+</mapper> 
