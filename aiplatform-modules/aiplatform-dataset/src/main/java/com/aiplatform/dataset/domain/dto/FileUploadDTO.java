@@ -19,6 +19,9 @@ public class FileUploadDTO {
     /** 数据集ID */
     private Long datasetId;
     
+    /** 版本ID */
+    private Long versionId;
+    
     /** 当前分片 */
     private Integer chunkNumber;
     
@@ -63,6 +66,7 @@ public class FileUploadDTO {
 
     public FileUploadDTO(FileUploadDTO source, int chunkNumber) {
         this.datasetId = source.getDatasetId();
+        this.versionId = source.getVersionId();
         this.chunkNumber = chunkNumber;
         this.chunkSize = source.getChunkSize();
         this.currentChunkSize = source.getCurrentChunkSize();

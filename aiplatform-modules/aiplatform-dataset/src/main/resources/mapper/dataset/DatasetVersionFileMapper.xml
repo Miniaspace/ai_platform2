@@ -21,13 +21,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="createTime"   column="create_time"    />
         <result property="updateBy"     column="update_by"      />
         <result property="updateTime"   column="update_time"    />
-        <result property="remark"       column="remark"         />
     </resultMap>
 
     <sql id="selectDatasetVersionFileVo">
         select file_id, file_name, file_path, file_type, file_size, md5, sha1, file_hash,
         metadata, file_status, version_id, dataset_id, parent_id, create_by, create_time, update_by, 
-        update_time, remark
+        update_time
         from dataset_version_file
     </sql>
 
@@ -59,7 +58,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     <select id="selectFilesByVersionId" parameterType="Long" resultMap="DatasetVersionFileResult">
         <include refid="selectDatasetVersionFileVo"/>
-        where version_id = #{versionId}
+        where version_id = #{versionId} and (file_status = '0' or file_status is null)
     </select>
 
     <insert id="insertDatasetVersionFile" parameterType="DatasetVersionFile" useGeneratedKeys="true" keyProperty="fileId">
@@ -80,7 +79,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="createTime != null">create_time,</if>
             <if test="updateBy != null">update_by,</if>
             <if test="updateTime != null">update_time,</if>
-            <if test="remark != null">remark,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="fileName != null">#{fileName},</if>
@@ -98,7 +96,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="createTime != null">#{createTime},</if>
             <if test="updateBy != null">#{updateBy},</if>
             <if test="updateTime != null">#{updateTime},</if>
-            <if test="remark != null">#{remark},</if>
         </trim>
     </insert>
 
@@ -118,7 +115,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="parentId != null">parent_id = #{parentId},</if>
             <if test="updateBy != null">update_by = #{updateBy},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
-            <if test="remark != null">remark = #{remark},</if>
         </trim>
         where file_id = #{fileId}
     </update>

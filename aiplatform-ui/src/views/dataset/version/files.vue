@@ -234,9 +234,10 @@
       <el-upload
         ref="uploadRef"
         :action="uploadUrl"
+        :headers="headers"
         :data="uploadData"
         :before-upload="beforeUpload"
-        :http-request="customUpload"
+        auto-upload
         multiple
         :show-file-list="true"
         :on-success="handleUploadSuccess"
@@ -269,25 +270,25 @@ import {
   getDatasetVersionFileTags,
   updateDatasetVersionFileTags
 } from '@/api/dataset'
-import { 
-  listVersionFiles, 
+import {
+  listVersionFiles,
   listFilesByVersionId,
-  uploadFile as uploadVersionFile,
+  uploadFile,
   deleteVersionFile,
   batchUpdateFileStatus,
   previewFile,
   downloadFile,
   getFilePreviewInfo
 } from '@/api/dataset/version-file'
-import useUserStore from '@/store/modules/user'
-import { 
-  Search, 
-  Refresh, 
-  Upload, 
-  Download, 
-  Delete, 
-  View, 
-  Loading, 
+
+import {
+  Search,
+  Refresh,
+  Upload,
+  Download,
+  Delete,
+  View,
+  Loading,
   CircleClose,
   Warning,
   Document
@@ -312,11 +313,11 @@ console.log('Props参数:', props)
 // 使用多种方式获取参数，提高兼容性
 const datasetId = computed(() => {
   // 尝试所有可能的参数来源
-  const id = props.datasetId || 
-             route.params.datasetId || 
-             route.query.datasetId || 
+  const id = props.datasetId ||
+             route.params.datasetId ||
+             route.query.datasetId ||
              route.params.id;
-             
+
   const numId = id ? Number(id) : undefined;
   console.log('获取到的数据集ID:', numId, '原始值:', id, '类型:', typeof numId);
   return numId;
@@ -324,10 +325,10 @@ const datasetId = computed(() => {
 
 const versionId = computed(() => {
   // 尝试所有可能的参数来源
-  const id = props.versionId || 
-             route.params.versionId || 
+  const id = props.versionId ||
+             route.params.versionId ||
              route.query.versionId;
-             
+
   const numId = id ? Number(id) : undefined;
   console.log('获取到的版本ID:', numId, '原始值:', id, '类型:', typeof numId);
   return numId;
@@ -365,7 +366,7 @@ const setGlobalError = (message, details = null, type = 'warning') => {
   globalError.message = message
   globalError.details = details
   globalError.type = type
-  
+
   console.error('全局错误:', message, details)
 }
 
@@ -385,8 +386,10 @@ const uploadUrl = computed(() => {
     console.warn('未找到数据集ID或版本ID，无法构建上传URL')
     return ''
   }
-  // 在模拟模式下返回一个假的上传URL
-  return '/mock-upload-url'
+  // 修正上传URL
+  const url = `${import.meta.env.VITE_APP_BASE_API}/dataset/file/upload`;
+  console.log('文件上传地址:', url);
+  return url
 })
 
 const headers = computed(() => ({
@@ -396,7 +399,20 @@ const headers = computed(() => ({
 const uploadData = computed(() => {
   return {
     datasetId: datasetId.value,
-    versionId: versionId.value
+    versionId: versionId.value,
+    chunkNumber: 1,
+    totalChunks: 1,
+    chunkSize: 0,
+    currentChunkSize: 0,
+    totalSize: 0,
+    identifier: '',
+    filename: '',
+    relativePath: '',
+    fileType: '',
+    status: 'UPLOADING',
+    progress: 0,
+    uploadedSize: 0,
+    uploadedChunks: []
   }
 })
 
@@ -486,28 +502,28 @@ const getList = async () => {
 
     // 使用listFilesByVersionId替代listVersionFiles
     const response = await listFilesByVersionId(versionId.value)
-    
+
     if (response.code === 200) {
       // 在前端进行过滤和分页
       let filteredData = response.rows || []
-      
+
       // 应用过滤条件
       if (query.fileName) {
-        filteredData = filteredData.filter(item => 
+        filteredData = filteredData.filter(item =>
           item.fileName.toLowerCase().includes(query.fileName.toLowerCase())
         )
       }
-      
+
       if (query.fileType) {
-        filteredData = filteredData.filter(item => 
+        filteredData = filteredData.filter(item =>
           item.fileType === query.fileType
         )
       }
-      
+
       // 应用分页
       const startIndex = (query.pageNum - 1) * query.pageSize
       const endIndex = startIndex + query.pageSize
-      
+
       // 更新数据
       fileList.value = filteredData.slice(startIndex, endIndex).map(item => normalizeData(item))
       total.value = filteredData.length
@@ -530,32 +546,56 @@ const beforeUpload = (file) => {
     return false
   }
   
+  // 详细的参数日志
   console.log('上传前检查:', {
+    file: {
+      name: file.name,
+      size: file.size,
+      type: file.type,
+      lastModified: file.lastModified
+    },
     datasetId: datasetId.value,
     versionId: versionId.value,
-    file: file.name
+    uploadData: uploadData.value
   })
   
-  // 在模拟模式下，直接返回true允许上传
+  // 设置上传数据
+  const identifier = file.name + '_' + file.size + '_' + file.lastModified;
+  const data = uploadData.value;
+  data.datasetId = datasetId.value;
+  data.versionId = versionId.value;
+  data.identifier = identifier;
+  data.filename = file.name;
+  data.fileType = file.type || getFileTypeFromName(file.name);
+  data.totalSize = file.size;
+  data.chunkSize = file.size; // 小文件不分片
+  data.currentChunkSize = file.size;
+  data.status = 'UPLOADING';
+  data.progress = 0;
+  data.uploadedSize = 0;
+  data.uploadedChunks = [];
+  
+  console.log('最终上传参数:', data);
+  
   return true
 }
 
-const handleProgress = (event, file) => {
-  console.log('上传进度：', event.percent)
-}
-
-const handleSuccess = (response, file) => {
-  if (response.code === 200) {
-    ElMessage.success('文件上传成功')
-    getList()
-  } else {
-    ElMessage.error(response.msg || '文件上传失败')
-  }
-}
-
-const handleError = (error) => {
-  console.error('文件上传错误:', error)
-  ElMessage.error('文件上传失败')
+// 添加文件类型判断辅助函数
+const getFileTypeFromName = (fileName) => {
+  const ext = fileName.split('.').pop().toLowerCase();
+  const mimeTypes = {
+    'jpg': 'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'png': 'image/png',
+    'gif': 'image/gif',
+    'pdf': 'application/pdf',
+    'doc': 'application/msword',
+    'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'xls': 'application/vnd.ms-excel',
+    'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'txt': 'text/plain'
+  };
+  return mimeTypes[ext] || 'application/octet-stream';
 }
 
 // 文件操作方法
@@ -882,26 +922,48 @@ onMounted(() => {
   }, 100);
 })
 
-// 添加模板中需要的方法
-const handleUploadSuccess = () => {
+// 修改上传成功处理函数，添加更多日志
+const handleUploadSuccess = (res) => {
+  console.log('上传响应:', res)
+  if(res.code !== 200) {
+    console.error('上传错误:', res.msg)
+    ElMessage.error(res.msg || '上传失败')
+    return
+  }
+  
+  if (!res.data) {
+    console.error('上传成功但未返回文件信息')
+    ElMessage.warning('文件已上传，但未能获取文件信息')
+    getList() // 刷新列表
+    return
+  }
+  
+  console.log('上传成功，文件信息:', res.data)
+  const fileInfo = res.data
+  
+  // 将新文件添加到列表
+  const newFile = {
+    fileId: fileInfo.fileId,
+    fileName: fileInfo.fileName,
+    fileSize: fileInfo.fileSize,
+    fileType: fileInfo.fileType,
+    filePath: fileInfo.filePath,
+    createTime: fileInfo.createTime,
+    fileStatus: '0'
+  }
+  
+  // 更新文件列表
+  fileList.value = [newFile, ...fileList.value]
+  total.value += 1
+  
   ElMessage.success('上传成功')
-  getList()
   uploadRef.value?.clearFiles()
   showUploadDialog.value = false
 }
 
-const handleUploadError = (error) => {
+const handleUploadError = (error, file) => {
   console.error('上传错误:', error)
-  ElMessage.error('上传失败，请稍后重试')
-}
-
-// 打开上传对话框
-const handleOpenUpload = () => {
-  if (!checkPermission('dataset:file:upload')) {
-    ElMessage.error('您没有上传文件的权限')
-    return
-  }
-  
+  console.error('文件信息:', file)
   if (!datasetId.value || !versionId.value) {
     ElMessage.warning('请先选择一个版本')
     return
@@ -910,38 +972,51 @@ const handleOpenUpload = () => {
   showUploadDialog.value = true
 }
 
-// 自定义上传方法，实现模拟上传
-const customUpload = (options) => {
-  const { file, onSuccess, onError } = options
+// 自定义上传方法，实现真实后端接口上传
+const customUpload = async (options) => {
+  const { file, onSuccess, onError, onProgress } = options
   
-  // 如果文件太大，模拟失败
-  if (file.size > 100 * 1024 * 1024) {
-    ElMessage.error('文件大小不能超过100MB')
-    onError(new Error('文件大小超限'))
-    return
-  }
-  
-  // 模拟上传处理过程
-  setTimeout(() => {
-    // 创建一个新的模拟文件记录
-    const newFile = {
-      fileId: Math.floor(Math.random() * 10000000),
-      fileName: file.name,
-      fileType: file.name.split('.').pop().toUpperCase(),
-      fileSize: file.size,
-      createTime: new Date().toISOString()
+  try {
+    // 检查文件大小
+    if (file.size > 100 * 1024 * 1024) {
+      ElMessage.error('文件大小不能超过100MB')
+      onError(new Error('文件大小超限'))
+      return
     }
-    
-    // 添加到文件列表
-    fileList.value.unshift(newFile)
-    total.value += 1
-    
-    // 上传成功
-    onSuccess()
-    
-    // 提示成功
-    ElMessage.success(`文件 ${file.name} 上传成功`)
-  }, 1500) // 模拟网络延迟
+
+    // 检查必要参数
+    if (!datasetId.value || !versionId.value) {
+      ElMessage.error('缺少数据集ID或版本ID')
+      onError(new Error('参数错误'))
+      return
+    }
+
+    // 调用后端上传接口
+    const response = await uploadFile(
+      datasetId.value,
+      versionId.value,
+      file,
+      (progressEvent) => {
+        // 计算上传进度
+        const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+        onProgress({ percent: progress })
+      }
+    )
+
+    if (response.code === 200) {
+      // 上传成功
+      onSuccess(response)
+      ElMessage.success(`文件 ${file.name} 上传成功`)
+    } else {
+      // 上传失败
+      onError(new Error(response.msg || '上传失败'))
+      ElMessage.error(response.msg || '上传失败')
+    }
+  } catch (error) {
+    console.error('文件上传错误:', error)
+    onError(error)
+    ElMessage.error('上传失败，请稍后重试')
+  }
 }
 </script>
 

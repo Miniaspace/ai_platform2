@@ -31,6 +31,7 @@ import com.aiplatform.dataset.domain.dto.FileQuickUploadDTO;
 import com.aiplatform.dataset.domain.entity.DatasetFile;
 import com.aiplatform.dataset.domain.entity.DatasetVersionFile;
 import com.aiplatform.dataset.mapper.DatasetFileMapper;
+import com.aiplatform.dataset.mapper.DatasetVersionFileMapper;
 import com.aiplatform.dataset.service.IFileService;
 import io.minio.*;
 import io.minio.http.Method;
@@ -65,6 +66,9 @@ public class FileServiceImpl implements IFileService {
     @Autowired
     private DatasetFileMapper datasetFileMapper;
 
+    @Autowired
+    private DatasetVersionFileMapper datasetVersionFileMapper;
+
     @Override
     public AjaxResult checkChunkExist(FileUploadDTO uploadDTO) {
         try {
@@ -79,60 +83,86 @@ public class FileServiceImpl implements IFileService {
     @Override
     public AjaxResult uploadChunk(MultipartFile file, FileUploadDTO uploadDTO) {
         try {
+            // 参数校验和日志记录
+            log.info("开始上传分片: identifier={}, chunkNumber={}/{}, fileName={}, fileSize={}", 
+                uploadDTO.getIdentifier(), 
+                uploadDTO.getChunkNumber(),
+                uploadDTO.getTotalChunks(),
+                uploadDTO.getFilename(),
+                uploadDTO.getTotalSize());
+
             // 参数校验
             if (file == null || file.isEmpty()) {
+                log.error("文件为空");
                 return AjaxResult.error("文件不能为空");
             }
             if (uploadDTO == null) {
+                log.error("上传信息为空");
                 return AjaxResult.error("上传信息不能为空");
             }
             if (uploadDTO.getIdentifier() == null) {
+                log.error("文件标识符为空");
                 return AjaxResult.error("文件标识符不能为空");
             }
             if (uploadDTO.getChunkNumber() == null) {
+                log.error("分片编号为空");
                 return AjaxResult.error("分片编号不能为空");
             }
             if (uploadDTO.getTotalChunks() == null) {
+                log.error("总分片数为空");
                 return AjaxResult.error("总分片数不能为空");
             }
             if (uploadDTO.getFilename() == null) {
+                log.error("文件名为空");
                 return AjaxResult.error("文件名不能为空");
             }
 
             // 验证文件类型
             if (!FileTypeValidator.validate(file)) {
+                log.error("不支持的文件类型: {}", file.getContentType());
                 return AjaxResult.error("不支持的文件类型");
             }
 
             String chunkPath = getChunkPath(uploadDTO);
+            log.info("保存分片文件: {}", chunkPath);
             minioService.putObject(chunkPath, file.getInputStream(), file.getSize(), file.getContentType());
 
             // 保存上传信息（仅在第一个分片时）
             if (uploadDTO.getChunkNumber() == 1) {
+                log.info("保存上传信息: identifier={}", uploadDTO.getIdentifier());
                 saveUploadInfo(uploadDTO);
             }
 
+            log.info("分片上传成功: {}/{}", uploadDTO.getChunkNumber(), uploadDTO.getTotalChunks());
             return AjaxResult.success();
         } catch (Exception e) {
-            log.error("Upload chunk failed", e);
-            return AjaxResult.error("Upload chunk failed: " + e.getMessage());
+            log.error("上传分片失败", e);
+            return AjaxResult.error("上传分片失败: " + e.getMessage());
         }
     }
 
     @Override
     public AjaxResult mergeChunks(FileUploadDTO uploadDTO) {
         try {
+            log.info("开始合并文件分片: identifier={}, fileName={}, totalChunks={}", 
+                uploadDTO.getIdentifier(),
+                uploadDTO.getFilename(),
+                uploadDTO.getTotalChunks());
+
             String filePath = getFilePath(uploadDTO);
             
             // 1. 检查所有分片是否都已上传
+            log.info("检查分片完整性");
             for (int i = 1; i <= uploadDTO.getTotalChunks(); i++) {
                 String chunkPath = getChunkPath(new FileUploadDTO(uploadDTO, i));
                 if (!minioService.doesObjectExist(chunkPath)) {
+                    log.error("分片不完整: chunk={}", i);
                     return AjaxResult.error("分片文件不完整,请重新上传");
                 }
             }
 
             // 2. 准备合并源
+            log.info("准备合并分片");
             List<ComposeSource> sources = new ArrayList<>();
             for (int i = 1; i <= uploadDTO.getTotalChunks(); i++) {
                 String chunkPath = getChunkPath(new FileUploadDTO(uploadDTO, i));
@@ -140,25 +170,40 @@ public class FileServiceImpl implements IFileService {
             }
 
             // 3. 合并文件
+            log.info("开始合并文件: {}", filePath);
             minioService.composeObject(filePath, sources);
 
             // 4. 删除分片文件
+            log.info("清理分片文件");
             for (int i = 1; i <= uploadDTO.getTotalChunks(); i++) {
                 String chunkPath = getChunkPath(new FileUploadDTO(uploadDTO, i));
                 minioService.removeObject(chunkPath);
             }
 
             // 5. 保存文件信息到数据库
-            DatasetVersionFile datasetFile = new DatasetVersionFile();
-            datasetFile.setVersionId(uploadDTO.getDatasetId());
-            datasetFile.setFileName(uploadDTO.getFilename());
-            datasetFile.setFilePath(filePath);
-            datasetFile.setFileSize(uploadDTO.getTotalSize());
-            datasetFile.setFileType(uploadDTO.getFileType());
+            log.info("保存文件信息到数据库");
+            DatasetVersionFile versionFile = new DatasetVersionFile();
+            versionFile.setVersionId(uploadDTO.getVersionId());
+            versionFile.setDatasetId(uploadDTO.getDatasetId());
+            versionFile.setFileName(uploadDTO.getFilename());
+            versionFile.setFilePath(filePath);
+            versionFile.setFileSize(uploadDTO.getTotalSize());
+            versionFile.setFileType(uploadDTO.getFileType());
+            versionFile.setFileStatus("0"); // 设置文件状态为正常
             
-            insertDatasetFile(datasetFile);
+            insertDatasetFile(versionFile);
+            
+            // 构建返回数据
+            Map<String, Object> data = new HashMap<>();
+            data.put("fileId", versionFile.getFileId());
+            data.put("fileName", versionFile.getFileName());
+            data.put("fileSize", versionFile.getFileSize());
+            data.put("fileType", versionFile.getFileType());
+            data.put("filePath", versionFile.getFilePath());
+            data.put("createTime", DateUtils.parseDateToStr(DateUtils.YYYY_MM_DD_HH_MM_SS, versionFile.getCreateTime()));
 
-            return AjaxResult.success("文件上传成功");
+            log.info("文件合并完成: {}, fileId={}", uploadDTO.getFilename(), versionFile.getFileId());
+            return AjaxResult.success("文件上传成功").put("data", data);
         } catch (Exception e) {
             log.error("合并文件分片失败", e);
             return AjaxResult.error("合并文件分片失败: " + e.getMessage());
@@ -513,8 +558,9 @@ public class FileServiceImpl implements IFileService {
     }
 
     private String getFilePath(FileUploadDTO uploadDTO) {
-        return String.format("datasets/%d/%s/%s", 
+        return String.format("datasets/%d/versions/%d/%s/%s", 
             uploadDTO.getDatasetId(),
+            uploadDTO.getVersionId(),
             uploadDTO.getIdentifier(),
             uploadDTO.getFilename()
         );
@@ -662,6 +708,11 @@ public class FileServiceImpl implements IFileService {
         file.setDatasetId(versionFile.getDatasetId());
         file.setVersionId(versionFile.getVersionId());
         file.setParentId(versionFile.getParentId());
+        file.setCreateBy(versionFile.getCreateBy() != null ? versionFile.getCreateBy() : SecurityUtils.getUsername());
+        file.setCreateTime(versionFile.getCreateTime() != null ? versionFile.getCreateTime() : DateUtils.getNowDate());
+        file.setUpdateBy(versionFile.getUpdateBy());
+        file.setUpdateTime(versionFile.getUpdateTime());
+        file.setDelFlag("0"); // 确保设置删除标志为正常状态
         return file;
     }
 
@@ -703,9 +754,50 @@ public class FileServiceImpl implements IFileService {
     }
 
     @Override
-    public void insertDatasetFile(DatasetVersionFile datasetFile) {
-        DatasetFile file = convertToDatasetFile(datasetFile);
-        datasetFileMapper.insert(file);
+    public void insertDatasetFile(DatasetVersionFile versionFile) {
+        try {
+            log.info("开始保存文件信息: fileName={}, datasetId={}, versionId={}", 
+                versionFile.getFileName(),
+                versionFile.getDatasetId(),
+                versionFile.getVersionId());
+
+            // 1. 创建 DatasetFile 对象
+            DatasetFile datasetFile = new DatasetFile();
+            datasetFile.setFileName(versionFile.getFileName());
+            datasetFile.setFilePath(versionFile.getFilePath());
+            datasetFile.setFileSize(versionFile.getFileSize());
+            datasetFile.setFileType(versionFile.getFileType());
+            datasetFile.setFileStatus("0"); // 设置为正常状态
+            datasetFile.setDatasetId(versionFile.getDatasetId());
+            datasetFile.setCreateBy(SecurityUtils.getUsername());
+            datasetFile.setCreateTime(DateUtils.getNowDate());
+            
+            // 2. 插入到 dataset_file 表
+            log.info("插入数据到 dataset_file 表");
+            int rows = datasetFileMapper.insert(datasetFile);
+            if (rows <= 0) {
+                throw new RuntimeException("插入 dataset_file 记录失败");
+            }
+            
+            // 3. 设置 DatasetVersionFile 的 fileId
+            versionFile.setFileId(datasetFile.getFileId());
+            versionFile.setFileStatus("0"); // 设置为正常状态
+            versionFile.setCreateBy(SecurityUtils.getUsername());
+            versionFile.setCreateTime(DateUtils.getNowDate());
+            
+            // 4. 插入到 dataset_version_file 表
+            log.info("插入数据到 dataset_version_file 表");
+            rows = datasetVersionFileMapper.insertDatasetVersionFile(versionFile);
+            if (rows <= 0) {
+                throw new RuntimeException("插入 dataset_version_file 记录失败");
+            }
+            
+            log.info("文件信息保存成功: fileId={}, versionId={}, fileName={}", 
+                    datasetFile.getFileId(), versionFile.getVersionId(), versionFile.getFileName());
+        } catch (Exception e) {
+            log.error("保存文件信息失败", e);
+            throw new RuntimeException("保存文件信息失败: " + e.getMessage());
+        }
     }
 
     private DatasetFile createDatasetFile(MultipartFile file, String filePath) throws IOException {

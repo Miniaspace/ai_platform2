@@ -18,7 +18,7 @@ import com.aiplatform.dataset.service.IDatasetVersionFileService;
  * @author aiplatform
  */
 @RestController
-@RequestMapping("/dataset/version/file")
+@RequestMapping("/dataset/version")
 public class DatasetVersionFileController extends BaseController {
     @Autowired
     private IDatasetVersionFileService datasetVersionFileService;
@@ -41,7 +41,7 @@ public class DatasetVersionFileController extends BaseController {
      * 查询版本的所有文件
      */
     @RequiresPermissions("dataset:version:query")
-    @GetMapping("/version/{versionId}/files")
+    @GetMapping("/{versionId}/files")
     public AjaxResult listByVersionId(@PathVariable("versionId") Long versionId) {
         return success(datasetVersionFileService.selectFilesByVersionId(versionId));
     }

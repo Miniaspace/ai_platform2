@@ -60,7 +60,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         limit 1
     </select>
 
-    <insert id="insertDatasetFile" parameterType="DatasetFile" useGeneratedKeys="true" keyProperty="fileId">
+    <select id="selectDatasetFileByMd5" parameterType="String" resultMap="DatasetFileResult">
+        <include refid="selectDatasetFileVo"/>
+        where file_md5 = #{md5} and del_flag = '0'
+        limit 1
+    </select>
+
+    <select id="selectDatasetFileByPath" parameterType="String" resultMap="DatasetFileResult">
+        <include refid="selectDatasetFileVo"/>
+        where file_path = #{filePath} and del_flag = '0'
+        limit 1
+    </select>
+    
+    <select id="selectDatasetFileByVersionId" parameterType="Long" resultMap="DatasetFileResult">
+        <include refid="selectDatasetFileVo"/>
+        where version_id = #{versionId} and del_flag = '0'
+    </select>
+    
+    <select id="selectDatasetFileByParentId" parameterType="Long" resultMap="DatasetFileResult">
+        <include refid="selectDatasetFileVo"/>
+        where parent_id = #{parentId} and del_flag = '0'
+    </select>
+    
+    <select id="selectDatasetFileByVersionIdAndPath" resultMap="DatasetFileResult">
+        <include refid="selectDatasetFileVo"/>
+        where version_id = #{versionId} and file_path = #{filePath} and del_flag = '0'
+        limit 1
+    </select>
+    
+    <select id="selectDatasetFileByVersionIdAndName" resultMap="DatasetFileResult">
+        <include refid="selectDatasetFileVo"/>
+        where version_id = #{versionId} and file_name = #{fileName} and del_flag = '0'
+        limit 1
+    </select>
+
+    <insert id="insert" parameterType="DatasetFile" useGeneratedKeys="true" keyProperty="fileId">
         insert into dataset_file
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="datasetId != null">dataset_id,</if>
@@ -100,7 +134,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </trim>
     </insert>
 
-    <update id="updateDatasetFile" parameterType="DatasetFile">
+    <update id="update" parameterType="DatasetFile">
         update dataset_file
         <trim prefix="SET" suffixOverrides=",">
             <if test="fileName != null">file_name = #{fileName},</if>
@@ -120,11 +154,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where file_id = #{fileId}
     </update>
 
-    <delete id="deleteDatasetFileById" parameterType="Long">
+    <delete id="deleteById" parameterType="Long">
         update dataset_file set del_flag = '2' where file_id = #{fileId}
     </delete>
 
-    <delete id="deleteDatasetFileByIds" parameterType="String">
+    <delete id="deleteByIds" parameterType="String">
         update dataset_file set del_flag = '2' where file_id in 
         <foreach item="fileId" collection="array" open="(" separator="," close=")">
             #{fileId}

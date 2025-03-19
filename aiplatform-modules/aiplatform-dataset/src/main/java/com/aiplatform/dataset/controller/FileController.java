@@ -104,6 +104,10 @@ public class FileController extends BaseController {
     @RequiresPermissions("dataset:file:upload")
     public AjaxResult uploadFile(@RequestParam("file") MultipartFile file, FileUploadDTO uploadDTO) {
         try {
+            // 记录详细上传信息到日志
+            log.info("上传文件信息: filename={}, datasetId={}, versionId={}, identifier={}", 
+                     file.getOriginalFilename(), uploadDTO.getDatasetId(), uploadDTO.getVersionId(), uploadDTO.getIdentifier());
+            
             // 验证文件类型
             if (!FileTypeValidator.validate(file.getContentType())) {
                 log.warn("Unsupported file type: {}", file.getContentType());
